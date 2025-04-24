@@ -1,22 +1,20 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import NeonButton from '@/components/NeonButton';
 import NeonCard from '@/components/NeonCard';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import ContactForm from '@/components/ContactForm';
 import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
   const { toast } = useToast();
   
-  // Script injection for the Chatzap form
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://crm.chatzapbot.com.br/web-forms/forms/5LrpQAGWCcfSRvD5xMrYWJuIBySBCE8ASeuneaG3Icy4HUWtJN/form.js";
     script.async = true;
     
-    // Create a div to hold the form
     const formContainer = document.getElementById('chatzap-form-container');
     if (formContainer) {
       formContainer.appendChild(script);
@@ -40,17 +38,14 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-dark text-white">
       <Header />
       
-      {/* Hero Section */}
       <section 
         id="início" 
         className="pt-32 pb-16 md:pt-40 md:pb-24 relative overflow-hidden"
       >
-        {/* Neon edge effects */}
         <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-neon-blue to-transparent"></div>
         <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-l from-neon-orange to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-neon-red to-transparent"></div>
         
-        {/* Network effect background */}
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
         
         <div className="container mx-auto px-4 relative">
@@ -98,51 +93,19 @@ const Index = () => {
                 </div>
               </div>
               
-              <div id="chatzap-form-container" className="neon-border-red rounded-lg p-4">
+              <div className="neon-border-red rounded-lg p-4">
                 <h3 className="text-xl font-orbitron mb-4 text-center">Entre em contato</h3>
-                
-                {/* Fallback form in case the script doesn't load */}
-                <form 
-                  className="space-y-4" 
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handleLeadClick();
-                  }}
-                >
-                  <input 
-                    type="text" 
-                    placeholder="Nome" 
-                    className="w-full bg-black/50 border border-neon-red/50 rounded-md px-4 py-2 text-white"
-                    required 
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Email" 
-                    className="w-full bg-black/50 border border-neon-red/50 rounded-md px-4 py-2 text-white"
-                    required 
-                  />
-                  <input 
-                    type="tel" 
-                    placeholder="WhatsApp" 
-                    className="w-full bg-black/50 border border-neon-red/50 rounded-md px-4 py-2 text-white"
-                    required 
-                  />
-                  <NeonButton type="submit" color="red" className="w-full">
-                    Quero aprender agora
-                  </NeonButton>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Platforms Section */}
       <section 
         id="plataformas" 
         className="py-16 md:py-24 bg-black relative overflow-hidden"
       >
-        {/* Background effect */}
         <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
         
         <div className="container mx-auto px-4 relative">
@@ -191,12 +154,10 @@ const Index = () => {
         </div>
       </section>
       
-      {/* What You'll Learn Section */}
       <section 
         id="o que aprenderá" 
         className="py-16 md:py-24 relative overflow-hidden"
       >
-        {/* Background effect */}
         <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
         
         <div className="container mx-auto px-4 relative">
@@ -248,7 +209,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Mentor Section */}
       <section 
         id="mentor" 
         className="py-16 md:py-24 bg-black relative overflow-hidden"
@@ -296,7 +256,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
       <section className="py-16 relative overflow-hidden bg-gradient-to-r from-black via-black to-black">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
         
