@@ -8,6 +8,7 @@ type NeonButtonProps = {
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;  // Add the disabled property
 };
 
 const NeonButton = ({ 
@@ -15,7 +16,8 @@ const NeonButton = ({
   color = 'red', 
   className,
   onClick,
-  type = 'button'
+  type = 'button',
+  disabled = false  // Add default value
 }: NeonButtonProps) => {
   const colorStyles = {
     blue: 'border-neon-blue hover:bg-neon-blue/20 shadow-neon hover:shadow-[0_0_10px_#00BFFF,_0_0_20px_#00BFFF]',
@@ -27,10 +29,12 @@ const NeonButton = ({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}  // Apply the disabled property
       className={cn(
         'px-6 py-3 border-2 rounded-md text-white font-orbitron font-bold',
         'transition-all duration-300 transform hover:scale-105 focus:outline-none',
         colorStyles[color],
+        disabled ? 'opacity-60 cursor-not-allowed hover:scale-100' : '',  // Add styling for disabled state
         className
       )}
     >
