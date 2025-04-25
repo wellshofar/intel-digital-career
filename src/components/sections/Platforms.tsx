@@ -20,14 +20,14 @@ const Platforms = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <NeonCard color="blue">
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 mb-6 flex items-center justify-center">
+            <div className="flex flex-col items-center p-6">
+              <div className="w-48 h-24 mb-6 flex items-center justify-center bg-white/5 rounded-lg p-4">
                 <img 
-                  src="https://d3k4cmzkhxudj4.cloudfront.net/pre-build/make-color.webp" 
-                  alt="Logo Make.com" 
-                  className="max-w-full max-h-full"
+                  src="/lovable-uploads/9f7be105-33d8-496e-a7a9-676f14d71f44.png"
+                  alt="Logo Make" 
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
               <h3 className="text-xl font-orbitron mb-3">Make</h3>
@@ -38,12 +38,12 @@ const Platforms = () => {
           </NeonCard>
           
           <NeonCard color="orange">
-            <div className="flex flex-col items-center">
-              <div className="w-24 h-24 mb-6 flex items-center justify-center">
+            <div className="flex flex-col items-center p-6">
+              <div className="w-48 h-24 mb-6 flex items-center justify-center bg-white/5 rounded-lg p-4">
                 <img 
-                  src="https://www.typebotworkflow.com/img/logo.svg" 
+                  src="/lovable-uploads/cdc3960e-9775-4e9f-9c21-bc7883bdadd5.png"
                   alt="Logo Typebot" 
-                  className="max-w-full max-h-full"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
               <h3 className="text-xl font-orbitron mb-3">Typebot</h3>
