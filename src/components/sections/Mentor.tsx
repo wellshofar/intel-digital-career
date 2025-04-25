@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Instagram } from 'lucide-react';
 
 type MentorProps = {
   content: {
@@ -16,40 +18,44 @@ const Mentor = ({ content }: MentorProps) => {
     >
       <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="flex justify-center">
-          <div className="relative w-64 h-64">
-            <div className="absolute inset-0 rounded-full animate-glow"></div>
-            <div className="absolute inset-1 rounded-full bg-gradient-to-br from-neon-blue via-neon-red to-neon-orange overflow-hidden">
-              <img 
-                src={content.bio_image} 
-                alt="Wellington Luiz" 
-                className="w-full h-full object-cover rounded-full p-1"
-              />
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+          <div className="flex flex-col items-center md:items-end">
+            <div className="relative w-72 h-72 md:w-80 md:h-80">
+              <div className="absolute inset-0 rounded-full animate-glow"></div>
+              <Avatar className="w-full h-full border-4 border-neon-blue/20">
+                <AvatarImage 
+                  src={content.bio_image} 
+                  alt="Wellington Luiz"
+                  className="object-cover"
+                />
+                <AvatarFallback className="bg-neon-blue/5 text-white">WL</AvatarFallback>
+              </Avatar>
             </div>
           </div>
-        </div>
-        
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold font-orbitron mb-3">
-            <span className="gradient-text">Sobre o mentor</span>
-          </h2>
-          <h3 className="text-xl font-orbitron mb-4">Wellington Luiz</h3>
           
-          <p className="text-white/80 mb-6">
-            Especialista em soluções digitais, automações e marketing para iniciantes.
-            Atua há mais de 10 anos ajudando pessoas a transformarem seu conhecimento em negócio no digital.
-          </p>
-          
-          <div className="flex gap-4">
-            <a 
-              href={content.instagram_url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-neon-blue hover:text-white transition-colors duration-300"
-            >
-              @eusouwellingtonluiz
-            </a>
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold font-orbitron mb-3">
+              <span className="gradient-text">Sobre o mentor</span>
+            </h2>
+            <h3 className="text-xl font-orbitron mb-4">Wellington Luiz</h3>
+            
+            <p className="text-white/80 mb-6">
+              Especialista em soluções digitais, automações e marketing para iniciantes.
+              Atua há mais de 10 anos ajudando pessoas a transformarem seu conhecimento em negócio no digital.
+            </p>
+            
+            <div className="flex justify-center md:justify-start gap-4">
+              <a 
+                href={content.instagram_url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-neon-blue hover:text-white transition-colors duration-300"
+              >
+                <Instagram size={20} />
+                <span>@eusouwellingtonluiz</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
