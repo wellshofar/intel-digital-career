@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
 type ContentItem = {
+  id: string;
   key: string;
   value: string;
 };
@@ -24,7 +25,7 @@ const ContentPage = () => {
     try {
       const { data, error } = await supabase
         .from('site_content')
-        .select('*')
+        .select('id, key, value')
         .order('key');
 
       if (error) throw error;

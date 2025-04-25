@@ -21,14 +21,14 @@ const SocialIcons = ({ className }: SocialIconsProps) => {
 
   const fetchSocialUrls = async () => {
     try {
-      const { data, error } = await supabase
+      const { data: siteContent, error } = await supabase
         .from('site_content')
-        .select('*')
+        .select('key, value')
         .in('key', ['instagram_url', 'youtube_url', 'facebook_url']);
 
       if (error) throw error;
 
-      const urls = data.reduce((acc: any, item) => {
+      const urls = siteContent.reduce((acc: any, item) => {
         acc[item.key] = item.value;
         return acc;
       }, {});

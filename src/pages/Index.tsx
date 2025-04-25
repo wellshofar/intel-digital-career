@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -24,7 +25,7 @@ const Index = () => {
     try {
       const { data, error } = await supabase
         .from('site_content')
-        .select('*');
+        .select('key, value');
 
       if (error) throw error;
 
