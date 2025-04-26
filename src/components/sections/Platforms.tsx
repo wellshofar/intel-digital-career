@@ -1,7 +1,6 @@
-
 import React from 'react';
 import NeonCard from '@/components/NeonCard';
-import { WordpressLogo, ShoppingBag } from 'lucide-react';
+import { LayoutGrid, ShoppingBag } from 'lucide-react';
 
 const Platforms = () => {
   return (
@@ -25,7 +24,7 @@ const Platforms = () => {
           <NeonCard color="blue">
             <div className="flex flex-col items-center p-6">
               <div className="w-full h-20 mb-6 flex items-center justify-center bg-white/5 rounded-lg p-4">
-                <WordpressLogo size={48} className="text-neon-blue" />
+                <LayoutGrid size={48} className="text-neon-blue" />
               </div>
               <h3 className="text-xl font-orbitron mb-3">WordPress</h3>
               <p className="text-white/80 text-center">
