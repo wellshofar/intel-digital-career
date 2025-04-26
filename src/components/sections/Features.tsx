@@ -4,33 +4,33 @@ import NeonCard from '@/components/NeonCard';
 
 const features = [
   {
-    title: "Criar automações no Make",
-    description: "Aprenda a construir fluxos automatizados entre aplicativos sem precisar de conhecimento em programação.",
+    title: "Medo da mudança",
+    description: "Supere o receio de recomeçar com um caminho claro e apoio de quem já passou por isso.",
     color: "blue"
   },
   {
-    title: "Fazer bots com Typebot",
-    description: "Construa chatbots inteligentes para sites, WhatsApp e muito mais.",
+    title: "Receio com tecnologia",
+    description: "Aprenda ferramentas com interfaces intuitivas, criadas para serem usadas por não-programadores.",
     color: "orange"
   },
   {
-    title: "Landing Pages que convertem",
-    description: "Crie páginas otimizadas para conversão utilizando técnicas modernas de design.",
+    title: "Falta de tempo",
+    description: "Metodologias que se adaptam à sua rotina, sem exigir dedicação integral para aprender.",
     color: "red"
   },
   {
-    title: "Captura de leads inteligente",
-    description: "Implemente sistemas automáticos para capturar e processar leads de maneira eficiente.",
+    title: "Cansado de depender de terceiros",
+    description: "Domine o próprio negócio sem depender de profissionais externos para cada pequena mudança.",
     color: "blue"
   },
   {
-    title: "Conectar WhatsApp, E-mail e Instagram",
-    description: "Integre diferentes canais de comunicação em uma única plataforma automatizada.",
+    title: "Insegurança para começar",
+    description: "Tenha acesso a roteiros detalhados que minimizam o risco e aumentam suas chances de sucesso.",
     color: "orange"
   },
   {
-    title: "Automação de processos",
-    description: "Otimize seu trabalho eliminando tarefas repetitivas através de automações inteligentes.",
+    title: "Dificuldade em se adaptar",
+    description: "Transforme sua experiência de vida em vantagens competitivas no mundo digital.",
     color: "red"
   }
 ];
@@ -38,16 +38,19 @@ const features = [
 const Features = () => {
   return (
     <section 
-      id="o que aprenderá" 
+      id="o-problema" 
       className="py-16 md:py-24 relative overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
       
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold font-orbitron mb-3">
-            <span className="gradient-text">O que você vai aprender</span>
+            <span className="gradient-text">Sente que está na hora</span> de virar o jogo?
           </h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
+            Esses são os desafios que homens com mais de 45 anos enfrentam ao pensar em mudar de carreira
+          </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

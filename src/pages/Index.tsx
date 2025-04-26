@@ -9,6 +9,7 @@ import Platforms from '@/components/sections/Platforms';
 import Features from '@/components/sections/Features';
 import Mentor from '@/components/sections/Mentor';
 import Cta from '@/components/sections/Cta';
+import SuccessStories from '@/components/sections/SuccessStories';
 
 type SiteContent = {
   [key: string]: string;
@@ -65,9 +66,10 @@ const Index = () => {
       
       <div className="flex-grow container mx-auto px-4 max-w-7xl">
         <Hero content={content} />
-        <Platforms />
-        <Features />
         <Mentor content={content} />
+        <Features />
+        <Platforms />
+        <SuccessStories />
         <Cta content={content} />
       </div>
       

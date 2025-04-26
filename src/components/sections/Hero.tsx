@@ -20,16 +20,16 @@ const Hero = ({ content }: HeroProps) => {
       <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-l from-neon-orange to-transparent"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-neon-red to-transparent"></div>
       
-      <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-orbitron mb-6 leading-tight animate-text-glow">
-            Comece sua <span className="gradient-text">nova profissão</span> com Automações Inteligentes
+            Transforme sua <span className="gradient-text">experiência</span> em um negócio próprio
           </h1>
           
           <p className="text-lg md:text-xl text-white/80 mb-8">
-            Aprenda a criar fluxos com Make, bots com Typebot e transforme o digital em sua nova carreira
+            Nunca é tarde para construir sua liberdade. Comece agora mesmo com ferramentas digitais acessíveis.
           </p>
           
           <div className="hidden sm:block lg:hidden">
@@ -47,7 +47,7 @@ const Hero = ({ content }: HeroProps) => {
           </div>
 
           <NeonButton color="red" className="text-lg">
-            {content.cta_primary_text || 'Quero aprender agora'}
+            {content.cta_primary_text || 'Quero Começar Agora'}
           </NeonButton>
         </div>
         

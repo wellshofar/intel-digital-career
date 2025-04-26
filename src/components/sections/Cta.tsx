@@ -16,15 +16,19 @@ const Cta = ({ content }: CtaProps) => {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold font-orbitron mb-6">
-            <span className="gradient-text">Pronto para transformar sua carreira?</span>
+            <span className="gradient-text">Receba gratuitamente o Guia dos Primeiros Passos</span>
           </h2>
           
           <p className="text-lg text-white/80 mb-8">
-            Dê o próximo passo na sua carreira digital. Aprenda automações e conquiste independência profissional.
+            Descubra como montar um negócio lucrativo e autônomo em até 90 dias. Comece sua jornada para a independência profissional agora.
           </p>
           
+          <div id="chatzap-form-container" className="mb-8">
+            {/* Script form will be injected here */}
+          </div>
+          
           <NeonButton color="red" className="text-lg">
-            {content.cta_secondary_text || 'Começar minha jornada agora'}
+            {content.cta_secondary_text || 'Entrar para a Comunidade'}
           </NeonButton>
         </div>
       </div>

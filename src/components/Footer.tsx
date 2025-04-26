@@ -15,17 +15,17 @@ const Footer = () => {
           <div>
             <Logo className="mb-4" />
             <p className="text-white/60 text-sm leading-relaxed">
-              Aprenda a criar automações e bots para transformar sua carreira digital.
+              Wellington Luiz — Consultoria em Automação e Negócios Digitais
             </p>
           </div>
           
           <div>
             <h3 className="text-xl font-orbitron mb-4 gradient-text">Links Rápidos</h3>
             <ul className="space-y-2">
-              {['Início', 'Plataformas', 'O que aprenderá', 'Mentor'].map((item) => (
+              {['Início', 'Sobre Mim', 'O Problema', 'Plataformas', 'Histórias'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item.toLowerCase().replace(' ', '-')}`}
                     className="text-white/70 hover:text-white transition-colors duration-300"
                   >
                     {item}
@@ -55,6 +55,9 @@ const Footer = () => {
                 Termos de Uso
               </a>
             </div>
+          </div>
+          <div className="text-center mt-4 text-white/60 text-sm italic">
+            "Você tem a experiência. Eu te ajudo a transformar isso em liberdade."
           </div>
         </div>
       </div>

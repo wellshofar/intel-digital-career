@@ -36,10 +36,10 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-8">
           <nav>
             <ul className="flex gap-6">
-              {['Início', 'Plataformas', 'O que aprenderá', 'Mentor'].map((item) => (
+              {['Início', 'Sobre Mim', 'O Problema', 'Plataformas', 'Histórias'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
                     className="text-white/80 hover:text-white hover:text-glow transition-all duration-300"
                   >
                     {item}
@@ -66,10 +66,10 @@ const Header = () => {
         <div className="md:hidden fixed inset-0 top-16 bg-black/95 z-40">
           <nav className="container mx-auto px-4 py-8">
             <ul className="flex flex-col gap-6">
-              {['Início', 'Plataformas', 'O que aprenderá', 'Mentor'].map((item) => (
+              {['Início', 'Sobre Mim', 'O Problema', 'Plataformas', 'Histórias'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
                     className="text-lg text-white/80 hover:text-white block py-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

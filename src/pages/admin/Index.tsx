@@ -2,7 +2,7 @@
 import React from 'react';
 import AdminLayout from '@/layouts/AdminLayout';
 import { Button } from '@/components/ui/button';
-import { Settings, FileText } from 'lucide-react';
+import { Settings, FileText, Users, MessageSquare } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const AdminIndex = () => {
@@ -45,6 +45,38 @@ const AdminIndex = () => {
               className="w-full bg-neon-orange/20 hover:bg-neon-orange/30 text-white"
             >
               Acessar Configurações
+            </Button>
+          </div>
+          
+          <div className="bg-black/50 p-8 rounded-lg border border-neon-red/30 hover:border-neon-red/50 transition-colors">
+            <div className="flex items-center gap-4 mb-4">
+              <Users className="w-8 h-8 text-neon-red" />
+              <h2 className="text-xl font-orbitron text-white">Depoimentos</h2>
+            </div>
+            <p className="text-white/80 mb-6">
+              Gerencie histórias de sucesso e depoimentos
+            </p>
+            <Button
+              onClick={() => navigate('/admin/testimonials')}
+              className="w-full bg-neon-red/20 hover:bg-neon-red/30 text-white"
+            >
+              Gerenciar Depoimentos
+            </Button>
+          </div>
+          
+          <div className="bg-black/50 p-8 rounded-lg border border-neon-blue/30 hover:border-neon-blue/50 transition-colors">
+            <div className="flex items-center gap-4 mb-4">
+              <MessageSquare className="w-8 h-8 text-neon-blue" />
+              <h2 className="text-xl font-orbitron text-white">Mensagens</h2>
+            </div>
+            <p className="text-white/80 mb-6">
+              Veja mensagens recebidas pelo formulário de contato
+            </p>
+            <Button
+              onClick={() => navigate('/admin/messages')}
+              className="w-full bg-neon-blue/20 hover:bg-neon-blue/30 text-white"
+            >
+              Ver Mensagens
             </Button>
           </div>
         </div>
