@@ -29,7 +29,35 @@ const ContentPage = () => {
         .order('key');
 
       if (error) throw error;
-      setContent(data);
+      
+      // Check if we have the required fields in the database already
+      const requiredFields = ['youtube_url', 'cta_primary_link'];
+      const existingKeys = data.map((item) => item.key);
+      
+      // Add any missing required fields to the database
+      for (const field of requiredFields) {
+        if (!existingKeys.includes(field)) {
+          let defaultValue = '';
+          if (field === 'youtube_url') defaultValue = 'https://youtu.be/6cBDoNKgqmw';
+          if (field === 'cta_primary_link') defaultValue = 'https://chatzapbot.com.br/?post_type=product&p=426&preview=true';
+          
+          await supabase
+            .from('site_content')
+            .insert({ key: field, value: defaultValue });
+        }
+      }
+      
+      // Fetch again if we added new fields
+      if (requiredFields.some(field => !existingKeys.includes(field))) {
+        const { data: refreshedData } = await supabase
+          .from('site_content')
+          .select('id, key, value')
+          .order('key');
+          
+        if (refreshedData) setContent(refreshedData);
+      } else {
+        setContent(data);
+      }
     } catch (error) {
       console.error('Error fetching content:', error);
       toast({
@@ -72,6 +100,7 @@ const ContentPage = () => {
     bio_image: 'URL da Foto da Biografia',
     cta_form_script: 'Script do Formulário CTA',
     cta_primary_text: 'Texto do Botão Principal',
+    cta_primary_link: 'Link de Cadastro',
     cta_secondary_text: 'Texto do Botão Secundário'
   };
 

@@ -5,10 +5,17 @@ import NeonButton from '@/components/NeonButton';
 type CtaProps = {
   content: {
     cta_secondary_text?: string;
+    cta_primary_link?: string;
   };
 };
 
 const Cta = ({ content }: CtaProps) => {
+  const handleCtaClick = () => {
+    if (content.cta_primary_link) {
+      window.open(content.cta_primary_link, '_blank', 'noopener,noreferrer');
+    }
+  };
+  
   return (
     <section className="py-16 relative overflow-hidden bg-gradient-to-r from-black via-black to-black">
       <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center"></div>
@@ -27,7 +34,7 @@ const Cta = ({ content }: CtaProps) => {
             {/* Script form will be injected here */}
           </div>
           
-          <NeonButton color="red" className="text-lg">
+          <NeonButton color="red" className="text-lg" onClick={handleCtaClick}>
             {content.cta_secondary_text || 'Entrar para a Comunidade'}
           </NeonButton>
         </div>

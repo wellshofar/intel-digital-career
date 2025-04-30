@@ -16,7 +16,10 @@ type SiteContent = {
 };
 
 const Index = () => {
-  const [content, setContent] = useState<SiteContent>({});
+  const [content, setContent] = useState<SiteContent>({
+    youtube_url: 'https://youtu.be/6cBDoNKgqmw',
+    cta_primary_link: 'https://chatzapbot.com.br/?post_type=product&p=426&preview=true',
+  });
   
   useEffect(() => {
     fetchContent();
@@ -30,10 +33,15 @@ const Index = () => {
 
       if (error) throw error;
 
-      const contentMap = data.reduce((acc: SiteContent, item) => {
-        acc[item.key] = item.value;
-        return acc;
-      }, {});
+      // Start with default content
+      const contentMap = {
+        youtube_url: 'https://youtu.be/6cBDoNKgqmw',
+        cta_primary_link: 'https://chatzapbot.com.br/?post_type=product&p=426&preview=true',
+        ...data.reduce((acc: SiteContent, item) => {
+          acc[item.key] = item.value;
+          return acc;
+        }, {})
+      };
 
       setContent(contentMap);
     } catch (error) {

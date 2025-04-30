@@ -7,10 +7,35 @@ type HeroProps = {
   content: {
     youtube_url?: string;
     cta_primary_text?: string;
+    cta_primary_link?: string;
   };
 };
 
 const Hero = ({ content }: HeroProps) => {
+  const handleCtaClick = () => {
+    if (content.cta_primary_link) {
+      window.open(content.cta_primary_link, '_blank', 'noopener,noreferrer');
+    }
+  };
+  
+  // Format YouTube URL to embed format if needed
+  const getYoutubeEmbedUrl = (url?: string) => {
+    if (!url) return '';
+    
+    // If already an embed URL, return as is
+    if (url.includes('embed')) return url;
+    
+    // Extract ID from various YouTube URL formats
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    
+    if (match && match[2].length === 11) {
+      return `https://www.youtube.com/embed/${match[2]}`;
+    }
+    
+    return url;
+  };
+
   return (
     <section 
       id="início" 
@@ -37,7 +62,7 @@ const Hero = ({ content }: HeroProps) => {
               <iframe 
                 width="100%" 
                 height="100%" 
-                src={content.youtube_url} 
+                src={getYoutubeEmbedUrl(content.youtube_url)} 
                 title="Vídeo de Boas-vindas" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -46,7 +71,7 @@ const Hero = ({ content }: HeroProps) => {
             </div>
           </div>
 
-          <NeonButton color="red" className="text-lg">
+          <NeonButton color="red" className="text-lg" onClick={handleCtaClick}>
             {content.cta_primary_text || 'Quero Começar Agora'}
           </NeonButton>
         </div>
@@ -57,7 +82,7 @@ const Hero = ({ content }: HeroProps) => {
               <iframe 
                 width="100%" 
                 height="100%" 
-                src={content.youtube_url} 
+                src={getYoutubeEmbedUrl(content.youtube_url)} 
                 title="Vídeo de Boas-vindas" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
