@@ -11,6 +11,9 @@ type MentorProps = {
 };
 
 const Mentor = ({ content }: MentorProps) => {
+  // Use the uploaded image as the default bio image
+  const bioImage = content.bio_image || "/lovable-uploads/7a337c17-d0af-4150-bb6a-3f55b1bf3d8d.png";
+  
   return (
     <section 
       id="sobre-mim" 
@@ -24,17 +27,14 @@ const Mentor = ({ content }: MentorProps) => {
             <div className="relative w-72 h-72 md:w-80 md:h-80">
               <div className="absolute inset-0 rounded-full animate-glow"></div>
               <Avatar className="w-full h-full border-4 border-neon-blue/20">
-                {content.bio_image ? (
-                  <AvatarImage 
-                    src={content.bio_image} 
-                    alt="Wellington Luiz"
-                    className="object-cover"
-                  />
-                ) : (
-                  <AvatarFallback className="bg-neon-blue/5 text-white text-4xl">
-                    WL
-                  </AvatarFallback>
-                )}
+                <AvatarImage 
+                  src={bioImage} 
+                  alt="Wellington Luiz"
+                  className="object-cover"
+                />
+                <AvatarFallback className="bg-neon-blue/5 text-white text-4xl">
+                  WL
+                </AvatarFallback>
               </Avatar>
             </div>
           </div>

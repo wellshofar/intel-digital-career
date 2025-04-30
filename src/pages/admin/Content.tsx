@@ -31,7 +31,12 @@ const ContentPage = () => {
       if (error) throw error;
       
       // Check if we have the required fields in the database already
-      const requiredFields = ['youtube_url', 'cta_primary_link'];
+      const requiredFields = [
+        'youtube_url', 
+        'cta_primary_link',
+        'bio_image',
+        'instagram_url'
+      ];
       const existingKeys = data.map((item) => item.key);
       
       // Add any missing required fields to the database
@@ -40,6 +45,7 @@ const ContentPage = () => {
           let defaultValue = '';
           if (field === 'youtube_url') defaultValue = 'https://youtu.be/6cBDoNKgqmw';
           if (field === 'cta_primary_link') defaultValue = 'https://chatzapbot.com.br/?post_type=product&p=426&preview=true';
+          if (field === 'bio_image') defaultValue = '/lovable-uploads/7a337c17-d0af-4150-bb6a-3f55b1bf3d8d.png';
           
           await supabase
             .from('site_content')
